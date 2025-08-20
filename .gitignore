@@ -1,0 +1,7 @@
+.vscode/*
+!.vscode/tasks.json.disabled
+build/
+**/genin
+**/sol
+**/testdata.zip
+.clangd
