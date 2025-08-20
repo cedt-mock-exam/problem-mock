@@ -1,5 +1,8 @@
 /**
   written by @enderpalm, expect bugs >_<
+  edited for mock-exam (to be used with testlib)
+  won't work without testlib.h - make sure this file is
+  in the same directory as testlib.h file
 */
 
 #ifndef GENTOOLS
@@ -9,47 +12,46 @@
 #include <fstream>
 #include <functional>
 #include <iostream>
-#include <random>
 #include <string>
 #include <sys/types.h>
+#include "testlib.h"
 
 /**
  * @brief Generate test cases and write them to separate files
  *
  * @param tc Number of test cases to generate
- * @param generator Function that generates a test case (takes index and mt19937
+ * @param generator Function that generates a test case (takes index and testlib's rnd
  * generator as parameter)
- * @param seed seed to mt19937 rng
+ * @param seed seed to testlib's rnd
  */
 
 inline void useGenIn(int tc,
-                     std::function<void(int, std::mt19937_64)> generator,
+                     std::function<void(int, random_t*)> generator,
                      unsigned long seed = 0) {
+  registerGen(0, nullptr, 1);
   std::streambuf *coutBuffer = std::cout.rdbuf();
-  std::random_device rd;
-  ulong actualSeed = seed == 0 ? rd() : seed;
-  std::mt19937_64 gen(actualSeed);
-  std::cout << "Using seed: " << actualSeed << '\n';
+  rnd.setSeed(seed);
 
-  for (int i = 0; i < tc; ++i) {
-    std::string filename = "testcase/" + std::to_string(i + 1) + ".in";
+  for (int i = 1; i <= tc; ++i) {
+    std::string filename = "testcase/" + std::to_string(i) + ".in";
     std::ofstream outFile(filename);
     if (!outFile.is_open()) {
       std::cerr << "Failed to open file: " << filename << std::endl;
       continue;
     }
     std::cout.rdbuf(outFile.rdbuf());
-    gen.discard(1);
-    generator(i, gen);
+    generator(i, &rnd);
     std::cout.rdbuf(coutBuffer);
     outFile.close();
-    std::cout << "Generated: " + std::to_string(i + 1) + ".in\n";
+    std::cout << "Generated: " + std::to_string(i) + ".in\n";
   }
 
   std::cout.rdbuf(coutBuffer);
 }
 
-inline int randInt(int lower, int upper, std::mt19937_64 &gen) {
+// Use testlib's functions instead
+
+/* inline int randInt(int lower, int upper, std::mt19937_64 &gen) {
   std::uniform_int_distribution<> dis(lower, upper);
   gen.discard(1);
   return dis(gen);
@@ -71,6 +73,6 @@ template <typename T>
 inline const T &randVec(std::vector<T> &vec, std::mt19937_64 &gen) {
   int index = randInt(0, vec.size() - 1, gen);
   return vec[index];
-}
+} */
 
 #endif
