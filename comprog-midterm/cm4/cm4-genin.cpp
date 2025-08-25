@@ -78,46 +78,71 @@ int main(int argc, char** argv) {
         // For tc 9..20, we want to enforce specific purposes.
         else if (tc >= 9 && tc <= 20) {
             // We'll try up to 1000 iterations or until the candidate passes the check.
-            const int MAX_TRIES = 1000;
+            const int MAX_TRIES = 1000000;
             bool ok = false;
             vector<int> a;
             int n=0, k=0;
             for (int iter = 0; iter < MAX_TRIES && !ok; iter++) {
                 // Use different generation logic per test case.
                 if (tc == 9) {
-                    // Many equal-length candidates (length 2 windows) with SAME sum S.
-                    n = rnd.next(80, 150);
-                    k = 2;
+                    // Many equal-length (length=4) candidate subarrays with the SAME sum S.
+                    // All candidates length=4, same sum, increasing first element -> lexicographic comparisons.
+                    n = rnd.next(100, 180);
+                    k = 4;
                     a.assign(n, 1);
-                    // Fill background with small numbers.
-                    for (int i=0; i<n; i++) a[i] = rnd.next(1, 3);
-                    // Pick candidate start positions
-                    vector<int> idx(n-2);
+                    for (int i=0;i<n;i++) a[i] = rnd.next(1, 5); // low background
+
+                    int L = 4;
+                    // Collect non-overlapping starts (leave at least 1 gap after block for a barrier)
+                    vector<int> idx(n - L);
                     iota(idx.begin(), idx.end(), 0);
                     shuffle(idx.begin(), idx.end());
                     vector<int> starts;
                     for (int p : idx) {
                         bool okLocal = true;
-                        for (int s : starts) {
-                            if (abs(p - s) < 3) { okLocal = false; break; }
-                        }
+                        for (int s : starts)
+                            if (abs(p - s) < L + 1) { okLocal = false; break; }
                         if (okLocal) starts.push_back(p);
                         if ((int)starts.size() == 8) break;
                     }
                     sort(starts.begin(), starts.end());
-                    int x0 = rnd.next(5000,9000);
-                    int y0 = rnd.next(10, min(3000, x0));
-                    int S = x0 + y0;
-                    int countPlaced = 0;
-                    for (int t = 0; t < (int)starts.size(); t++) {
-                        int x = x0 + t, y = S - x;
-                        if (y < 1 || y > x) continue;
+
+                    // Base block: [x0, y1, y2, y3] with y* <= x0
+                    int x0 = rnd.next(5000, 8000);
+                    int y1 = rnd.next(50, min(1500, x0));
+                    int y2 = rnd.next(30, min(1200, x0));
+                    int y3 = rnd.next(20, min(1000, x0));
+                    // Ensure non-increasing (optional, just keep <= x)
+                    if (y1 < y2) swap(y1, y2);
+                    if (y2 < y3) swap(y2, y3);
+                    if (y1 < y2) swap(y1, y2);
+
+                    int S = x0 + y1 + y2 + y3;
+                    int placed = 0;
+
+                    for (int t = 0; t < (int)starts.size(); ++t) {
+                        int x = x0 + t;          // increase first element
+                        int dec = t;             // amount to subtract from last to keep sum
+                        if (y3 - dec < 1) break; // can't keep positive last element
+                        int yy3 = y3 - dec;
+                        // Sum check: x + y1 + y2 + yy3 == S
+                        // All must be <= first element x
+                        if (y1 > x || y2 > x || yy3 > x) break;
+
                         int p = starts[t];
-                        if (p+1 < n) { a[p] = x; a[p+1] = y; }
-                        if (p+2 < n) { a[p+2] = x+1; } // barrier
-                        countPlaced++;
+                        if (p + L - 1 >= n) continue;
+
+                        a[p]     = x;
+                        a[p + 1] = y1;
+                        a[p + 2] = y2;
+                        a[p + 3] = yy3;
+
+                        // Barrier (value > first) to force stop at length 4
+                        if (p + L < n) a[p + L] = min(10000, x + 1);
+
+                        placed++;
                     }
-                    ok = (countPlaced >= 2); // must have at least 2 candidate windows
+                    ok = (placed >= 2); // need at least two candidates to exercise lex tie
                 }
                 else if (tc == 10) {
                     // Equal-sum pairs; we want earlier candidate's pair to be lex larger.
