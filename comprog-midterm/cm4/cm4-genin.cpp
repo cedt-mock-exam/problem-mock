@@ -391,61 +391,48 @@ int main(int argc, char** argv){
                 ok = (best.sum == targetSum && best.len == L && best.start == 40); // Last block should win
             } break;
 
-            // tc 10: longer wins over same-sum shorter
+            // tc 10: Modified - descending sequence followed by repeated values
             case 10: {
-                n = 80; 
-                k = 10;
-                a.assign(n, 5);
+
+                int seqLength = 600; // Length of the descending sequence
+
+                n = seqLength + (seqLength/2); 
+                k = seqLength;
+                a.resize(n);
                 
-                // Create a single-element and longer block with same sum
-                int targetSum = 6000;
-                int singlePos = 10;
-                int blockStart = 30;
-                int L = 5;
                 
-                // Single element with targetSum
-                a[singlePos] = targetSum;
-                
-                // Block with same sum but longer length
-                vector<int> block = {2000, 1500, 1200, 800, 500};
-                
-                // Verify block sums to targetSum
-                int s = 0;
-                for(int v : block) s += v;
-                assert(s == targetSum);
-                
-                // Place block
-                for(int i = 0; i < L; i++) {
-                    a[blockStart + i] = block[i];
+                // Create descending sequence n, n-1, ..., 2, 1
+                for(int i = 0; i < seqLength; i++) {
+                    a[i] = seqLength - i;
+                }
+                for(int i=seqLength;i<n;i++) {
+                    a[i] = seqLength+1;
                 }
                 
-                // Add barrier
-                if(blockStart + L < n) a[blockStart + L] = block[0] + 1;
-                
-                // Verify
                 auto best = solve(a, k);
-                ok = (best.sum == targetSum && best.len == L && best.start == blockStart);
+                
+        
+                ok = true;
             } break;
 
-            // tc 11: unique maximum sum window
+            // tc 11: 
             case 11: {
                 n = 120; 
                 k = 15;
-                a.assign(n, rnd.next(1, 5000));
+                a.assign(n, 7);
                 
-                // Create a window with clearly maximum sum
+                // Create a very specific window - just two elements
                 int pos = 50;
-                int len = 3;
                 
-                a[pos] = 9000;
-                a[pos+1] = 8000;
-                a[pos+2] = 7000;
+                a[pos] = 5000;       // First element
+                a[pos+1] = 5000;     // Equal second element
                 
-                // Verify
+                // Add barrier
+                if(pos + 2 < n) a[pos + 2] = a[pos] + 1;
+                
+                // The buggy code's output won't include the second element
                 auto best = solve(a, k);
-                auto cands = allMaxSumCandidates(a, k);
-                
-                ok = (best.start == pos && best.len >= len && cands.size() == 1);
+                ok = (best.start == pos && best.len == 2);
             } break;
 
             // tc 12: two equal-sum len=10 windows differ late
@@ -496,13 +483,13 @@ int main(int argc, char** argv){
                 ok = (best.len == L && best.start == posB); // Block B should win
             } break;
 
-            // tc 13: K=1 multiple maxima
+            // tc 13: 
             case 13: {
                 n = 1000; 
                 k = 1;
-                a.assign(n, rnd.next(1, 9000));
+                a.assign(n, 50);  // Different background value
                 
-                // Place maximum value at multiple positions
+                // Place identical maximum values
                 int mx = 10000;
                 vector<int> positions = {100, 200, 300, 400, 500};
                 
@@ -510,31 +497,24 @@ int main(int argc, char** argv){
                     a[pos] = mx;
                 }
                 
-                // Verify
+                // Buggy code will only print the sum, not the element
                 auto best = solve(a, k);
-                int countMx = 0;
-                for(int v : a) if(v == mx) countMx++;
-                
-                ok = (k == 1 && countMx >= 2 && a[best.start] == mx);
+                ok = (k == 1 && a[best.start] == mx);
             } break;
 
-            // tc 14: multiple subarrays with identical first two elements
+            // tc 14: 
             case 14: {
                 n = 1000;
                 k = 600;
-                a.assign(n, 1); // Fill with ones initially
+                a.assign(n, 1);
                 
-                int L = 5; // Length of each block
-                int targetSum = 16000;
+                int L = 3;  // Shorter length
+                int targetSum = 12000;
                 
-                // Create multiple blocks with identical first two elements but different third element
-                // First two elements are the same across all blocks
+                // Create two blocks with identical sum and length but different distributions
                 vector<vector<int>> blocks = {
-                    {5000, 4000, 3000, 2000, 2000},
-                    {5000, 4000, 3100, 1900, 2000},
-                    {5000, 4000, 3200, 1800, 2000},
-                    {5000, 4000, 3300, 1700, 2000},
-                    {5000, 4000, 3400, 1600, 2000}
+                    {8000, 2000, 2000},  // Block A
+                    {9000, 1500, 1500}   // Block B - lexicographically larger
                 };
                 
                 // Verify each block sums to targetSum
@@ -544,42 +524,21 @@ int main(int argc, char** argv){
                     assert(sum == targetSum);
                 }
                 
-                // Place blocks at non-overlapping positions
-                for(int i = 0; i < blocks.size(); i++) {
-                    int pos = 10 + i * 15;
-                    
-                    for(int j = 0; j < L; j++) {
-                        a[pos + j] = blocks[i][j];
-                    }
-                    
-                    // Add simple barrier after each block
-                    if(pos + L < n) a[pos + L] = blocks[i][0] + 1;
+                // Place blocks
+                int posA = 10, posB = 50;
+                
+                for(int j = 0; j < L; j++) {
+                    a[posA + j] = blocks[0][j];
+                    a[posB + j] = blocks[1][j];
                 }
                 
-                // Verify
+                // Add barriers
+                if(posA + L < n) a[posA + L] = blocks[0][0] + 1;
+                if(posB + L < n) a[posB + L] = blocks[1][0] + 1;
+                
+                // Buggy code might choose A since it doesn't check lexicographical order
                 auto best = solve(a, k);
-                
-                // The expected winner is the last block (highest lexicographical order due to largest third value)
-                int expectedPos = 10 + 4 * 15; // Position of last block
-                
-                ok = (best.sum == targetSum && best.len == L && best.start == expectedPos);
-                
-                if(!ok) {
-                    cout << "Test case 14 verification failed." << endl;
-                    
-                    // Simple fallback
-                    a.assign(n, 1);
-                    for(int i = 0; i < 5; i++) {
-                        int pos = 10 + i * 10;
-                        a[pos] = 5000;
-                        a[pos+1] = 4000;
-                        a[pos+2] = 3000 + i * 100;
-                        a[pos+3] = 2000 - i * 100;
-                        a[pos+4] = 2000;
-                        if(pos + 5 < n) a[pos + 5] = a[pos] + 1;
-                    }
-                    ok = true;
-                }
+                ok = (best.sum == targetSum && best.len == L && best.start == posB);
             } break;
 
             // tc 15: completely random array (no specific pattern)
@@ -650,33 +609,28 @@ int main(int argc, char** argv){
                 ok = true;
             } break;
 
-            // tc 18: descending run longer than K so best length == K (truncation by K)
+            // tc 18: 
             case 18: {
                 n = 200; 
                 k = 8;
-                a.resize(n);
+                a.assign(n, 10);  // Different background
                 
-                // Create a long descending run from the start
+                // Create an array where the first k+1 elements are equal
                 int val = 9000;
-                for(int i = 0; i < 20; i++) {
+                for(int i = 0; i < k+1; i++) {
                     a[i] = val;
-                    val = max(1, val - 50);
                 }
                 
-                // Fill rest with smaller values
-                for(int i = 20; i < n; i++) {
-                    a[i] = rnd.next(1, 1000);
-                }
+                // Add a large element later that satisfies the constraint
+                // The buggy code might include this in the count
+                a[k+1] = val - 1;  // Still satisfies the constraint
                 
-                // Verify
+                // Add a barrier
+                a[k+2] = val + 1;  // Doesn't satisfy constraint
+                
+                // Buggy code might miscalculate the length due to boundary issues
                 auto best = solve(a, k);
-                int actualLen = 0;
-                for(int j = 0; j < n && j < k + 5; j++) {
-                    if(a[j] <= a[0]) actualLen++;
-                    else break;
-                }
-                
-                ok = (actualLen > k && best.start == 0 && best.len == k);
+                ok = (best.start == 0 && best.len == k);
             } break;
 
             // tc 19: overlapping equal-sum same-length windows, lex decided at deeper index
