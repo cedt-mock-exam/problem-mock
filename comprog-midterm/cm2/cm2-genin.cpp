@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
 
             cout << "["<<T<<","<<i<<","<<cur<<"]"; // DEBUG
             
-            string fname = string(cur<10?"0":"") + to_string(cur) + ".in";
+            string fname = to_string(cur) + ".in";
             ofstream fout;
             fout.open("testcase/" + fname);
 

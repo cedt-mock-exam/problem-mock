@@ -23,8 +23,7 @@ void solve(string fname) {
 int main() {
     for(int i=1; i<=20; ++i) {
         cout << "[" << i << "]"; // DEBUG
-        string fname = "testcase/"+string(i<10?"0":"") + to_string(i);
-        solve(fname);
+        solve("testcase/"+to_string(i));
     }
     return 0;
 }
