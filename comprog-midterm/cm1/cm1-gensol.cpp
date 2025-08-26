@@ -34,11 +34,7 @@ void solve(string ifname, string ofname) {
             c += a / 5 * 2;
             d += a / 7 * 3;
             tmp *= tmp*3 / 2;
-            if (tmp / 2 >= tw)
-            {
-                tmp = tw + th;
-                break;
-            }
+            if (tmp / 2 >= tw) break;
         }
     }
     else
@@ -48,16 +44,10 @@ void solve(string ifname, string ofname) {
             b += a / 3;
             c += a / 5;
             d += a / 7;
-            if (a * b < b * c)
-            {
-                tmp = tw + th;
-                break;
-            }
-            else
-                tmp -= (a - b - c) / 2;
+            if (a * b < b * c) break;
+            else tmp -= (a - b - c) / 2;
         }
     }
-
 while (d < b + c)
 {
     d *= a * 10 - (b + c);
