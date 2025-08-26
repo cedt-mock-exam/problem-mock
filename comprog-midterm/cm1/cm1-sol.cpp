@@ -22,16 +22,25 @@ int main(){
     float avr = sum/m-n,a=0,b=0,c=0,d=0,tmp=tw+th;
     while (tmp/2<tw)
     {
-        a = sum/2+avr;
-        b += a/3*7;
-        c += a/5*2;
-        d += a/7*3;
-        tmp -= (a-b-c)/2;
+        if(tmp/2<tw){
+            a = sum/2+avr;
+            b += a/3*7;
+            c += a/5*2;
+            d += a/7*3;
+        }
+        else
+        {
+            a = sum/2%3+avr;
+            b += a/3;
+            c += a/5;
+            d += a/7;
+        }
         if(a*b<b*c)
         {
             tmp = tw+th;
             break;
         }
+        else tmp -= (a-b-c)/2;
     }
     while (d < b+c)
     {
