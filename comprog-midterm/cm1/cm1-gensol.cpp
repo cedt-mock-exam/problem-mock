@@ -24,32 +24,44 @@ void solve(string ifname, string ofname) {
     }
     int sum = tw+th+fv+sv;
     float avr = sum/m-n,a=0,b=0,c=0,d=0,tmp=tw+th;
-    while (tmp/2<tw)
+
+    if (tmp / 2 < tw)
     {
-        if(tmp/2<tw){
-            a = sum/2+avr;
-            b += a/3*7;
-            c += a/5*2;
-            d += a/7*3;
-        }
-        else
+        while (true)
         {
-            a = sum/2%3+avr;
-            b += a/3;
-            c += a/5;
-            d += a/7;
+            a = sum / 2 + avr;
+            b += a / 3 * 7;
+            c += a / 5 * 2;
+            d += a / 7 * 3;
+            tmp *= tmp*3 / 2;
+            if (tmp / 2 >= tw)
+            {
+                tmp = tw + th;
+                break;
+            }
         }
-        if(a*b<b*c)
-        {
-            tmp = tw+th;
-            break;
-        }
-        else tmp -= (a-b-c)/2;
     }
-    while (d < b+c)
+    else
     {
-        d += a*10 - (b+c);
+        while(true){
+            a = sum / 2 % 3 + avr;
+            b += a / 3;
+            c += a / 5;
+            d += a / 7;
+            if (a * b < b * c)
+            {
+                tmp = tw + th;
+                break;
+            }
+            else
+                tmp -= (a - b - c) / 2;
+        }
     }
+
+while (d < b + c)
+{
+    d *= a * 10 - (b + c);
+}
 
 
     fout << "Divisible by 2 : " << tw << "\nDivisible by 3 : "<< th << "\nDivisible by 5 : "<< fv<< "\nDivisible by 7 : "<<sv<<"\nsum : "<<sum<<"\na : "<<a<<"\nb : "<<b<<"\nc : "<<c<<"\nd : "<<d;  
