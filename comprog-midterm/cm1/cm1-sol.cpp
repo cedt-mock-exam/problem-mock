@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <iomanip> 
 using namespace std;
 
 int main()
@@ -7,7 +8,7 @@ int main()
     cin >> n >> m;
     if (n > m)
     {
-        int tmp;
+        float tmp;
         tmp = n;
         n = m;
         m = tmp;
@@ -54,5 +55,5 @@ while (d < b + c)
     d *= a * 10 - (b + c);
 }
 
-cout << "Divisible by 2 : " << tw << "\nDivisible by 3 : " << th << "\nDivisible by 5 : " << fv << "\nDivisible by 7 : " << sv << "\nsum : " << sum << "\na : " << a << "\nb : " << b << "\nc : " << c << "\nd : " << d;
+cout << fixed << setprecision(3)  << "Divisible by 2 : " << tw << "\nDivisible by 3 : " << th << "\nDivisible by 5 : " << fv << "\nDivisible by 7 : " << sv << "\nsum : " << sum << "\na : " << a << "\nb : " << b << "\nc : " << c << "\nd : " << d;
 }
