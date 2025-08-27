@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <iomanip> 
 
 using namespace std;
 void solve(string ifname, string ofname) {
@@ -54,8 +55,9 @@ while (d < b + c)
 }
 
 
-    fout << "Divisible by 2 : " << tw << "\nDivisible by 3 : "<< th << "\nDivisible by 5 : "<< fv<< "\nDivisible by 7 : "<<sv<<"\nsum : "<<sum<<"\na : "<<a<<"\nb : "<<b<<"\nc : "<<c<<"\nd : "<<d;  
+    fout << fixed << setprecision(3)  << "Divisible by 2 : " << tw << "\nDivisible by 3 : " << th << "\nDivisible by 5 : " << fv << "\nDivisible by 7 : " << sv << "\nsum : " << sum << "\na : " << a << "\nb : " << b << "\nc : " << c << "\nd : " << d;
 }
+
 
 int main() {
     for(int i=1; i<=20; i++) {
