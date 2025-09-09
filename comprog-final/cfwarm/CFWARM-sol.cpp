@@ -3,6 +3,7 @@ using namespace std;
 map<string,int>lottery;
 
 int main(){
+    
     string most;
     int mostcount = 0;
     int howmany = 0;
