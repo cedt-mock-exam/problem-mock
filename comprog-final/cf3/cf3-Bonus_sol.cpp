@@ -24,7 +24,7 @@ int main() {
         favors.emplace_back(x, make_pair(0, id++));
     }
     ll cur = 0;
-    map<ll, bool> mp;
+    map<ll, bool> mark;
     for (int i = 0; i < q; i++) {
         char comd;
         cin >> comd;
@@ -35,14 +35,14 @@ int main() {
             favors.emplace_back(p - cur, make_pair(cur, id++));
         }
         else if (comd == '2') {
-            while (mp[favors.front().S.S]) {
+            while (mark[favors.front().S.S]) {
                 favors.pop_front();
             }
             st.erase(st.find(make_pair(favors.front().F, favors.front().S.S)));
             favors.pop_front();
         }
         else if (comd == '3') {
-            while (mp[favors.back().S.S]) {
+            while (mark[favors.back().S.S]) {
                 favors.pop_back();
             }
             st.erase(st.find(make_pair(favors.back().F, favors.back().S.S)));
@@ -58,7 +58,7 @@ int main() {
             cin >> k;
             auto it = st.begin();
             while (it != st.end() && (it -> F) + cur < k) {
-                mp[(it -> S)] = true;
+                mark[(it -> S)] = true;
                 it = st.erase(it);
             }
         }
@@ -67,7 +67,7 @@ int main() {
             cin >> m;
             ll sum = 0;
             while (m--) {
-                while (mp[favors.back().S.S]) {
+                while (mark[favors.back().S.S]) {
                     favors.pop_back();
                 }
                 sum += favors.back().F + cur - favors.back().S.F;
