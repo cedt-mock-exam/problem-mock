@@ -31,7 +31,10 @@ useGenIn(int tc,
          std::function<void(int, random_t *, std::ofstream *)> generator,
          int argc, char **argv, unsigned long seed = 0) {
   registerGen(argc, argv, 1); // use in-code parameter instead
-  rnd.setSeed(seed == 0 ? time(0) : seed);
+  seed = seed == 0 ? time(0) : seed;
+  rnd.setSeed(seed);
+  std::cout << "Generating " << tc << " test cases...\n";
+  std::cout << "Using seed: " << seed << "\n";
   for (int i = 1; i <= tc; ++i) {
     std::string filename = "testcase/" + std::to_string(i) + ".in";
     std::ofstream outFile(filename);
