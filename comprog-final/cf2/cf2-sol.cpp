@@ -10,15 +10,15 @@ set<string> destroyedCities;
 map<string,int> cityStrength;
 map<string,vector<string>> adjacentCities;
 
-void burn(string cityName,string previousCityName,int firePower){
-    int currentCityStrength=cityStrength[cityName];
+void burn(string currentCityName,string previousCityName,int firePower){
+    int currentCityStrength=cityStrength[currentCityName];
     if(firePower<=currentCityStrength){
         return;
     }
-    destroyedCities.insert(cityName);
-    for(string adjacentCitiesName : adjacentCities[cityName]){
+    destroyedCities.insert(currentCityName);
+    for(string adjacentCitiesName : adjacentCities[currentCityName]){
         if(adjacentCitiesName!=previousCityName){
-            burn(adjacentCitiesName,cityName,firePower-currentCityStrength);
+            burn(adjacentCitiesName,currentCityName,firePower-currentCityStrength);
         }
     }
 }

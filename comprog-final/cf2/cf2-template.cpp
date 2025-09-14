@@ -15,11 +15,11 @@ map<string,int> cityStrength;
 map<string,vector<string>> adjacentCities;
 // A map with key as the city name, and the mapped value as vector of strings which are its adjacent cities.
 
-void burn(string cityName,string previousCityName,int firePower){
+void burn(string currentCityName,string previousCityName,int firePower){
     /* You are ALLOWED to edit this function only. And "You" must implement this function from scratch.
     This function simulates the behavior of the inferno. Inferno means flame.
 
-    1. The inferno starts at the city named [cityName] with the burning power of [firePower]
+    1. The inferno starts at the city named [currentCityName] with the burning power of [firePower]
     2. Burning process.
          - Check if the inferno is strong enough to destroys the city.
          - If it is, 
