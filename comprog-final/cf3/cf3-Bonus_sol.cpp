@@ -70,7 +70,7 @@ int main() {
                 while (mark[favors.back().S.S]) {
                     favors.pop_back();
                 }
-                sum += favors.back().F + cur - favors.back().S.F;
+                sum += favors.back().F + cur;
                 st.erase(st.find(make_pair(favors.back().F, favors.back().S.S)));
                 favors.pop_back();
             }
