@@ -1,46 +1,44 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
+#include<vector>
+#include<map>
+#include<set>
+#include<algorithm>
 using namespace std;
+
+set<string> destroyedCities;
+map<string,int> cityStrength;
+map<string,vector<string>> adjacentCities;
+
+void burn(string currentCityName,string previousCityName,int firePower){
+    int currentCityStrength=cityStrength[currentCityName];
+    if(firePower<=currentCityStrength){
+        return;
+    }
+    destroyedCities.insert(currentCityName);
+    for(string adjacentCitiesName : adjacentCities[currentCityName]){
+        if(adjacentCitiesName!=previousCityName){
+            burn(adjacentCitiesName,currentCityName,firePower-currentCityStrength);
+        }
+    }
+}
 int main(){
-    int x,n;
-    cin>>x>>n;
-    pair<string,int> novel[n];
-    int min = INT_MAX;
-    for(int i=0;i<n;i++){
-        string name;
-        int num,canbuy,change=x;
-        bool limit=0;
-        cin>>name>>num;
-        for(int j=1;j<=num;j++){
-            int book;
-            cin>>book;
-            if(book<=change&&!limit){
-                change-=book;
-                if(j==num) canbuy = num;
-            }
-            else if(!limit){
-                limit=1;
-                canbuy = j-1;
-            }
-        }
-
-        if(canbuy==0) num = -1;//cant buy anything 
-        else num -= canbuy;
-
-        novel[i]={name,num};
-
-        if(num<min&&num!=-1){
-            min=num;
+    int N,S,K,P;
+    string C,c,I;
+    cin >> N;
+    for(int i=0;i<N;i++){
+        cin >> C >> S >> K;
+        cityStrength[C]=S;
+        for(int j=0;j<K;j++){
+            cin >> c;
+            adjacentCities[C].push_back(c);
         }
     }
-
-    bool havesome = false;
-    for(int i=0;i<n;i++){
-        if(novel[i].second==min){
-            cout<<novel[i].first<<"\n";
-            havesome = true;
-        }
-    }
-    if(!havesome){
-        cout<<"FIND SOMETHING FREE";
+    cin >> I >> P;
+    burn(I,"",P);
+    set<string>::iterator it;
+    cout << destroyedCities.size() << endl;
+    for(it=destroyedCities.begin();it!=destroyedCities.end();it++){
+        cout << *it << endl;
     }
 }
