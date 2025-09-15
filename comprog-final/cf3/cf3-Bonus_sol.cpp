@@ -6,7 +6,6 @@ using namespace std;
 
 typedef long long ll;
 typedef pair<ll, ll> pll;
-typedef pair<ll, pll> plpll;
 
 int main() {
     ios_base::sync_with_stdio(0);
@@ -16,15 +15,16 @@ int main() {
     cin >> n >> q;
     ll id = 0;
     multiset<pll> st;
-    deque<plpll> favors;
+    deque<pll> favors;
     for (int i = 0; i < n; i++) {
         ll x;
         cin >> x;
         st.emplace(x, id);
-        favors.emplace_back(x, make_pair(0, id++));
+        favors.emplace_back(x, id++);
     }
     ll cur = 0;
-    map<ll, bool> mark;
+    bool mark[n + q];
+    fill(mark, mark + n + q, false);
     for (int i = 0; i < q; i++) {
         char comd;
         cin >> comd;
@@ -32,20 +32,20 @@ int main() {
             ll p;
             cin >> p;
             st.emplace(p - cur, id);
-            favors.emplace_back(p - cur, make_pair(cur, id++));
+            favors.emplace_back(p - cur, id++);
         }
         else if (comd == '2') {
-            while (mark[favors.front().S.S]) {
+            while (mark[favors.front().S]) {
                 favors.pop_front();
             }
-            st.erase(st.find(make_pair(favors.front().F, favors.front().S.S)));
+            st.erase(st.find(make_pair(favors.front().F, favors.front().S)));
             favors.pop_front();
         }
         else if (comd == '3') {
-            while (mark[favors.back().S.S]) {
+            while (mark[favors.back().S]) {
                 favors.pop_back();
             }
-            st.erase(st.find(make_pair(favors.back().F, favors.back().S.S)));
+            st.erase(st.find(make_pair(favors.back().F, favors.back().S)));
             favors.pop_back();
         }
         else if (comd == '4') {
@@ -67,15 +67,15 @@ int main() {
             cin >> m;
             ll sum = 0;
             while (m--) {
-                while (mark[favors.back().S.S]) {
+                while (mark[favors.back().S]) {
                     favors.pop_back();
                 }
                 sum += favors.back().F + cur;
-                st.erase(st.find(make_pair(favors.back().F, favors.back().S.S)));
+                st.erase(st.find(make_pair(favors.back().F, favors.back().S)));
                 favors.pop_back();
             }
             st.emplace(sum - cur, id);
-            favors.emplace_front(sum - cur, make_pair(cur, id++));
+            favors.emplace_front(sum - cur, id++);
         }
     }
     ll ans = 0;
