@@ -25,7 +25,7 @@ struct Flight {
 
 const int MAX_TRIES = 5000;
 
-// 1-8: 1758122801
+// 6: 1758380965
 
 enum ResultType {
   CANCEL,
