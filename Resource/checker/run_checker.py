@@ -2,9 +2,10 @@
 """
 
     Checker Template for Cafe Grader (custom_cms)
-    Version 0.1 (Alpha)
+    Version 0.1.1 (Alpha)
     Status: W.I.P
-    
+    Cautions! This script is mainly made for Linux. (WSL is accepted because of develop from that.)
+
 """
 import os
 import sys
@@ -16,6 +17,7 @@ logging.basicConfig(
 )
 
 class Grader:
+    EXTENSTION = ".sol"
     CHECKER_FILE = None
     CURRENT_DIR = None
 
@@ -31,7 +33,7 @@ class Grader:
             if file.__contains__(".sol") or file == ".gitkeep":
                 continue
             testcase_in = file
-            testcase_out = file[0:len(file)-3] + ".sol"
+            testcase_out = file[0:len(file)-3] + self.EXTENSTION
             dataset.append([testcase_in, testcase_out])
         return dataset
 
@@ -59,6 +61,11 @@ class Grader:
 
 
 if __name__ == "__main__":
+    if os.name != 'posix':
+        logging.error("THIS SCRIPT IS MADE FOR LINUX ONLY! (WSL IS ACCEPTED.)")
+        
     CHECKER = input("Checker file name (.py): ")
+    if not CHECKER.endswith(".py"):
+        CHECKER += ".py"
     Judge = Grader(CHECKER)
     Judge.Run()
