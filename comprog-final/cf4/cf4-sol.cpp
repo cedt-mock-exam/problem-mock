@@ -1,7 +1,6 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -9,16 +8,11 @@ int main() {
   std::ios_base::sync_with_stdio(false);
   std::cin.tie(0);
   int a, f;
-  map<string, vector<bool>> airports;
+  map<string, string> airports;
   cin >> a >> f;
   for (int i = 0; i < a; i++) {
-    string code, gate;
-    cin >> code >> gate;
-    vector<bool> local_gate(gate.length());
-    for (int j = 0; j < gate.length(); j++) {
-      if (gate[j] == '1') local_gate[j] = true;
-    }
-    airports[code] = local_gate;
+    string code;
+    cin >> code >> airports[code];
   }
 
   bool has_changes = false;
@@ -46,9 +40,9 @@ int main() {
     string dest_code = dest.substr(0, 3);
     int dest_gate = stoi(dest.substr(4, dest.length() - 5));
 
-    airports[src_code][src_gate] = false; // free src gate first
-    if (!airports[dest_code][dest_gate]) { // trivial case
-      airports[dest_code][dest_gate] = true;
+    airports[src_code][src_gate] = '0'; // free src gate first
+    if (airports[dest_code][dest_gate] == '0') { // trivial case
+      airports[dest_code][dest_gate] = '1';
       continue;
     }
     has_changes = true;
@@ -56,14 +50,14 @@ int main() {
     int gate_size = airports[dest_code].size();
 
     for (int j = 1; dest_gate - j >= 0; j++) {
-      if (!airports[dest_code][dest_gate - j]) {
+      if (airports[dest_code][dest_gate - j] == '0') {
         left = dest_gate - j;
         break;
       }
     }
 
     for (int j = 1; dest_gate + j < gate_size; j++) {
-      if (!airports[dest_code][dest_gate + j]) {
+      if (airports[dest_code][dest_gate + j] == '0') {
         right = dest_gate + j;
         break;
       }
@@ -84,13 +78,13 @@ int main() {
       }
     }
     if (sol != -1) {
-      airports[dest_code][sol] = true; // able to land, dest gate is occupied
+      airports[dest_code][sol] = '1'; // able to land, dest gate is occupied
       cout << i << " SHIFT " << dest_code << '[' << sol << "]\n";
     } else {
-      airports[src_code][src_gate] = true; // unable to land, fly back to src gate
+      airports[src_code][src_gate] = '1'; // unable to land, fly back to src gate
       cout << i << " CANCEL\n";
     }
   }
-  if (!has_changes) cout << "NO CHANGE";
+  if (!has_changes) cout << "NO CHANGE";  
   return 0;
 }

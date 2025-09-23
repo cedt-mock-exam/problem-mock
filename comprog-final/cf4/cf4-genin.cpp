@@ -26,6 +26,8 @@ struct Flight {
 const int MAX_TRIES = 5000;
 
 // 6: 1758380965
+// other: 1758255853
+// 1758612469
 
 enum ResultType {
   CANCEL,
@@ -33,10 +35,12 @@ enum ResultType {
   SHIFT_LEFT,
   SHIFT_RIGHT,
   SHIFT_PRIORITY,
+  SHIFT_SELF,
   ANY
 };
 
-pair<airports, set<string>> generate_airports(random_t *rnd, int a, bool multiple_digit);
+pair<airports, set<string>> generate_airports(random_t *rnd, int a,
+                                              bool multiple_digit);
 bool pick_and_flight(random_t *rnd, airports &airports,
                      vector<Flight> &flight_record,
                      set<string> &available_codes, ResultType result_type);
@@ -152,11 +156,12 @@ int main(int argc, char **argv) {
                << '[' << flight.dest_gate << "]\n";
         }
       },
-      argc, argv, 1758255853);
+      argc, argv, 1758612469);
   return 0;
 }
 
-pair<airports, set<string>> generate_airports(random_t *rnd, int a, bool multiple_digit) {
+pair<airports, set<string>> generate_airports(random_t *rnd, int a,
+                                              bool multiple_digit) {
   airports airports;
 
   set<string> codes;
@@ -191,7 +196,7 @@ bool pick_and_flight(random_t *rnd, airports &airports,
   do {
     tries++;
     if (result_type == ANY) {
-      local_result_type = (ResultType)rnd->next(5);
+      local_result_type = (ResultType)rnd->next(6);
     }
     auto src = rnd->any(available_codes);
     vector<int> valid_src_gate;
@@ -258,6 +263,9 @@ bool pick_and_flight(random_t *rnd, airports &airports,
         actual_gate = sol;
       } else if (local_result_type == SHIFT_PRIORITY) {
         ok = (sol != -1);
+        actual_gate = sol;
+      } else if (local_result_type == SHIFT_SELF) {
+        ok = (sol != -1 && sol == src_gate);
         actual_gate = sol;
       } else if (local_result_type == CANCEL) {
         ok = (sol == -1);
