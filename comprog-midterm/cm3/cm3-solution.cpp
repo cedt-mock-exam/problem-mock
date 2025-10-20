@@ -19,8 +19,17 @@ int main(){
 		char c;
 		int r, x, y;
 		cin >> c >> r >> x >> y;
+	
+//		//Method 1 (easy) loop everything and check condition
+//		for(int i=0;i<n;i++){
+//			for(int j=0;j<m;j++){
+//				if(abs(x-i)+abs(y-j) <= r)
+//					map[i][j] = c;
+//			}
+//		}
 
-        //loop from x-r to x+r (rows)
+
+        //Method 2 
 		for(int i=x-r; i<=x+r; i++){
             //in each row have a loop to draw colors in columns satisfying the condition
 			for(int j=y-(r-abs(x-i)); j<=y+(r-abs(x-i)); j++){
