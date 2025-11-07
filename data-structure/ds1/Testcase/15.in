@@ -1,0 +1,40 @@
+39
+REGISTER ICT A
+UNDO
+ADDEVENT Camp
+SHOW Metro
+CANCEL Metro Nut
+UNDO
+ADDEVENT Coding
+CANCEL IOT Phone
+ADDEVENT Boardgame
+ADDEVENT Metro
+CANCEL ICT Wan
+CANCEL Metro Wan
+UNDO
+REGISTER Boardgame B
+REGISTER Phonesiam Wan
+SHOW Coding
+CANCEL Metro Wan
+ADDEVENT Phonesiam
+REGISTER Popsiam B
+REGISTER Popsiam B
+UNDO
+CANCEL Camp Nut
+UNDO
+UNDO
+ADDEVENT Phonesiam
+SHOW Phonesiam
+CANCEL ICT B
+CANCEL IOT Prame
+SHOW Coding
+CANCEL Metro Phone
+UNDO
+SHOW Metro
+SHOW ICT
+ADDEVENT Metro
+ADDEVENT IOT
+CANCEL Phonesiam Nut
+REGISTER Popsiam Euro
+SHOW Camp
+SHOW Boardgame

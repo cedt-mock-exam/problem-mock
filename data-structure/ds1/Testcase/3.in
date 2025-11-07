@@ -1,0 +1,16 @@
+15
+ADDEVENT Boardgame
+REGISTER Camp Wan
+ADDEVENT Boardgame
+UNDO
+ADDEVENT Camp
+REGISTER Metro Prame
+UNDO
+SHOW Coding
+SHOW Camp
+CANCEL Metro Euro
+CANCEL Camp Knight
+ADDEVENT IOT
+REGISTER Metro Nut
+SHOW Popsiam
+CANCEL Phonesiam Knight
