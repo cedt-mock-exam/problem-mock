@@ -1,3 +1,0 @@
-
-Wan
-A Euro
