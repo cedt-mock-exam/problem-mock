@@ -1,0 +1,973 @@
+972
+SHOW IOT
+ADDEVENT Phonesiam
+SHOW Boardgame
+UNDO
+SHOW Popsiam
+UNDO
+REGISTER Phonesiam Euro
+REGISTER Phonesiam Knight
+CANCEL Metro Phone
+SHOW Metro
+CANCEL Popsiam Knight
+ADDEVENT Boardgame
+CANCEL Boardgame Knight
+CANCEL Popsiam A
+ADDEVENT Boardgame
+ADDEVENT Coding
+REGISTER Phonesiam Euro
+CANCEL Coding Euro
+UNDO
+ADDEVENT Boardgame
+REGISTER IOT Nut
+REGISTER Boardgame Prame
+CANCEL Coding Euro
+ADDEVENT Popsiam
+SHOW Metro
+CANCEL Popsiam Prame
+CANCEL Camp Phone
+SHOW Popsiam
+CANCEL ICT Prame
+ADDEVENT Boardgame
+ADDEVENT IOT
+SHOW Phonesiam
+UNDO
+UNDO
+ADDEVENT IOT
+UNDO
+CANCEL Coding Knight
+CANCEL Camp Phone
+ADDEVENT IOT
+REGISTER IOT Euro
+SHOW Camp
+SHOW IOT
+UNDO
+ADDEVENT Metro
+REGISTER Metro A
+ADDEVENT Metro
+UNDO
+SHOW Coding
+UNDO
+ADDEVENT Coding
+REGISTER Coding Euro
+CANCEL Camp A
+UNDO
+REGISTER Camp Knight
+CANCEL IOT B
+REGISTER Boardgame B
+REGISTER Coding A
+UNDO
+SHOW IOT
+ADDEVENT Phonesiam
+SHOW Boardgame
+CANCEL ICT Prame
+CANCEL IOT Knight
+REGISTER IOT Wan
+UNDO
+CANCEL Camp A
+SHOW Phonesiam
+SHOW ICT
+UNDO
+SHOW Boardgame
+CANCEL Camp Euro
+SHOW Boardgame
+REGISTER Boardgame Nut
+CANCEL IOT Nut
+REGISTER ICT A
+CANCEL Metro Phone
+REGISTER Popsiam Prame
+UNDO
+ADDEVENT Camp
+ADDEVENT Phonesiam
+REGISTER IOT B
+UNDO
+REGISTER Popsiam Phone
+UNDO
+ADDEVENT Camp
+UNDO
+CANCEL ICT Prame
+UNDO
+UNDO
+CANCEL ICT Phone
+REGISTER Metro B
+ADDEVENT Popsiam
+ADDEVENT ICT
+REGISTER Metro A
+REGISTER Popsiam Wan
+SHOW ICT
+REGISTER Phonesiam A
+ADDEVENT Camp
+UNDO
+ADDEVENT ICT
+REGISTER Coding Nut
+REGISTER Popsiam A
+REGISTER Popsiam Prame
+SHOW Popsiam
+CANCEL Boardgame Euro
+CANCEL Phonesiam A
+CANCEL Boardgame Nut
+UNDO
+ADDEVENT Boardgame
+REGISTER ICT Euro
+UNDO
+CANCEL Coding B
+UNDO
+REGISTER IOT Prame
+SHOW Coding
+UNDO
+SHOW Boardgame
+CANCEL Boardgame Phone
+UNDO
+UNDO
+SHOW Popsiam
+UNDO
+REGISTER Popsiam Knight
+ADDEVENT Metro
+SHOW Boardgame
+ADDEVENT ICT
+UNDO
+CANCEL ICT Knight
+SHOW Phonesiam
+UNDO
+UNDO
+ADDEVENT Boardgame
+ADDEVENT Popsiam
+CANCEL Coding Nut
+CANCEL IOT Euro
+CANCEL Popsiam Euro
+UNDO
+CANCEL Popsiam Prame
+CANCEL Popsiam Phone
+ADDEVENT Popsiam
+CANCEL Camp Knight
+REGISTER Coding B
+CANCEL Phonesiam Euro
+CANCEL Coding Phone
+CANCEL Metro Wan
+UNDO
+SHOW Phonesiam
+ADDEVENT Camp
+UNDO
+SHOW Metro
+CANCEL Camp A
+REGISTER Coding Euro
+SHOW Popsiam
+REGISTER Boardgame Wan
+SHOW IOT
+SHOW Boardgame
+UNDO
+SHOW Boardgame
+CANCEL Popsiam Phone
+REGISTER Boardgame A
+CANCEL Camp B
+SHOW Coding
+ADDEVENT Boardgame
+UNDO
+UNDO
+CANCEL Camp B
+SHOW IOT
+UNDO
+REGISTER Phonesiam Phone
+REGISTER Metro Knight
+REGISTER IOT Nut
+UNDO
+REGISTER ICT Knight
+CANCEL Popsiam Nut
+REGISTER Phonesiam Prame
+REGISTER Metro Phone
+REGISTER IOT Phone
+UNDO
+UNDO
+ADDEVENT Boardgame
+UNDO
+SHOW Phonesiam
+CANCEL Phonesiam Euro
+ADDEVENT Coding
+CANCEL Coding Wan
+REGISTER Popsiam Phone
+SHOW Phonesiam
+ADDEVENT Popsiam
+REGISTER Phonesiam A
+UNDO
+CANCEL Phonesiam Prame
+SHOW Camp
+UNDO
+SHOW Coding
+ADDEVENT Boardgame
+ADDEVENT Coding
+UNDO
+REGISTER Coding Prame
+ADDEVENT ICT
+UNDO
+SHOW Metro
+REGISTER Metro Wan
+UNDO
+REGISTER Camp Euro
+CANCEL Metro Knight
+UNDO
+REGISTER Metro Phone
+ADDEVENT Popsiam
+UNDO
+SHOW Popsiam
+SHOW Camp
+SHOW Camp
+SHOW Popsiam
+UNDO
+UNDO
+UNDO
+SHOW Phonesiam
+CANCEL Phonesiam A
+REGISTER Camp Phone
+REGISTER Coding Wan
+CANCEL IOT Phone
+REGISTER Metro Wan
+UNDO
+REGISTER Boardgame A
+ADDEVENT Phonesiam
+CANCEL Popsiam A
+ADDEVENT Metro
+REGISTER ICT Prame
+REGISTER IOT Wan
+UNDO
+ADDEVENT Camp
+SHOW Metro
+UNDO
+REGISTER Camp Wan
+ADDEVENT Coding
+REGISTER Boardgame Knight
+UNDO
+REGISTER IOT Nut
+REGISTER Camp A
+CANCEL ICT Euro
+UNDO
+UNDO
+SHOW Phonesiam
+CANCEL Popsiam Knight
+SHOW Camp
+REGISTER ICT A
+ADDEVENT ICT
+UNDO
+CANCEL IOT B
+ADDEVENT Metro
+UNDO
+ADDEVENT Metro
+SHOW Metro
+REGISTER Phonesiam Prame
+REGISTER ICT A
+REGISTER ICT Phone
+REGISTER IOT Wan
+CANCEL Popsiam Euro
+CANCEL ICT B
+REGISTER Metro Phone
+SHOW Phonesiam
+SHOW IOT
+SHOW Boardgame
+UNDO
+CANCEL ICT Knight
+UNDO
+SHOW Phonesiam
+CANCEL Metro A
+ADDEVENT Metro
+UNDO
+ADDEVENT Popsiam
+SHOW Coding
+UNDO
+ADDEVENT IOT
+REGISTER Popsiam Phone
+SHOW Popsiam
+CANCEL Coding A
+UNDO
+REGISTER Popsiam Euro
+CANCEL Metro Knight
+SHOW Camp
+UNDO
+REGISTER ICT Prame
+REGISTER Phonesiam Wan
+UNDO
+CANCEL Boardgame Euro
+SHOW IOT
+SHOW ICT
+CANCEL Popsiam Prame
+REGISTER Popsiam A
+REGISTER Camp Phone
+SHOW Boardgame
+REGISTER Phonesiam Nut
+SHOW Camp
+SHOW Metro
+SHOW Phonesiam
+CANCEL Phonesiam Phone
+SHOW Coding
+ADDEVENT Phonesiam
+SHOW Boardgame
+SHOW ICT
+UNDO
+ADDEVENT Boardgame
+ADDEVENT IOT
+ADDEVENT Boardgame
+UNDO
+CANCEL ICT Nut
+REGISTER Coding Nut
+CANCEL ICT Wan
+ADDEVENT ICT
+REGISTER ICT B
+CANCEL Boardgame Wan
+REGISTER ICT Euro
+CANCEL IOT Wan
+ADDEVENT IOT
+REGISTER Phonesiam Knight
+ADDEVENT Coding
+ADDEVENT Popsiam
+UNDO
+ADDEVENT IOT
+REGISTER Popsiam Phone
+SHOW Popsiam
+ADDEVENT Metro
+ADDEVENT Phonesiam
+REGISTER Boardgame A
+UNDO
+UNDO
+REGISTER ICT Knight
+REGISTER IOT B
+SHOW Coding
+UNDO
+SHOW Camp
+UNDO
+SHOW Popsiam
+CANCEL Coding Wan
+REGISTER Boardgame B
+SHOW IOT
+REGISTER Metro Nut
+ADDEVENT Popsiam
+ADDEVENT Phonesiam
+REGISTER Camp A
+REGISTER ICT Knight
+ADDEVENT Metro
+REGISTER Popsiam Euro
+UNDO
+ADDEVENT Metro
+CANCEL IOT Wan
+SHOW Phonesiam
+CANCEL Coding Wan
+ADDEVENT Phonesiam
+UNDO
+CANCEL Metro Phone
+ADDEVENT Popsiam
+ADDEVENT Popsiam
+UNDO
+REGISTER Coding A
+ADDEVENT Coding
+ADDEVENT Coding
+CANCEL Coding Prame
+REGISTER ICT Knight
+REGISTER Phonesiam Knight
+REGISTER Popsiam Nut
+REGISTER Coding A
+ADDEVENT Metro
+REGISTER IOT Euro
+SHOW Boardgame
+ADDEVENT Boardgame
+REGISTER ICT Knight
+REGISTER Coding Nut
+REGISTER Phonesiam A
+CANCEL Phonesiam Wan
+REGISTER Coding A
+REGISTER Phonesiam Phone
+UNDO
+CANCEL Boardgame Euro
+REGISTER Metro Knight
+REGISTER Camp Euro
+REGISTER Coding Phone
+CANCEL IOT Nut
+CANCEL Phonesiam Knight
+ADDEVENT IOT
+UNDO
+REGISTER Boardgame Euro
+ADDEVENT ICT
+REGISTER IOT Wan
+CANCEL Popsiam Knight
+CANCEL Popsiam Wan
+CANCEL Metro A
+ADDEVENT IOT
+REGISTER Metro Wan
+SHOW Camp
+SHOW Metro
+ADDEVENT Popsiam
+SHOW Boardgame
+ADDEVENT IOT
+CANCEL ICT B
+CANCEL Camp Nut
+SHOW Popsiam
+UNDO
+ADDEVENT Metro
+ADDEVENT Popsiam
+SHOW Coding
+UNDO
+SHOW ICT
+CANCEL Metro Phone
+REGISTER Coding Euro
+SHOW Metro
+UNDO
+REGISTER Coding Wan
+CANCEL Camp Knight
+ADDEVENT IOT
+ADDEVENT Metro
+SHOW IOT
+REGISTER ICT Wan
+ADDEVENT Coding
+UNDO
+REGISTER Metro Knight
+CANCEL Popsiam Prame
+CANCEL Metro Knight
+UNDO
+CANCEL Boardgame Phone
+REGISTER Phonesiam Wan
+REGISTER Phonesiam Nut
+CANCEL Phonesiam Phone
+REGISTER Popsiam Phone
+CANCEL Popsiam Nut
+SHOW ICT
+CANCEL ICT B
+ADDEVENT Boardgame
+UNDO
+ADDEVENT Metro
+SHOW Camp
+REGISTER Coding Knight
+CANCEL Metro Euro
+CANCEL Coding Nut
+SHOW IOT
+UNDO
+SHOW Metro
+CANCEL ICT Nut
+UNDO
+CANCEL Coding Knight
+UNDO
+REGISTER IOT B
+ADDEVENT Camp
+UNDO
+UNDO
+CANCEL Popsiam Prame
+SHOW Metro
+ADDEVENT IOT
+SHOW Popsiam
+ADDEVENT IOT
+REGISTER Popsiam A
+CANCEL IOT Prame
+ADDEVENT Phonesiam
+REGISTER Popsiam Prame
+UNDO
+ADDEVENT IOT
+SHOW Coding
+UNDO
+UNDO
+UNDO
+SHOW Phonesiam
+REGISTER Phonesiam Phone
+UNDO
+CANCEL Boardgame Euro
+ADDEVENT Popsiam
+ADDEVENT Phonesiam
+UNDO
+UNDO
+REGISTER ICT B
+CANCEL Coding Euro
+REGISTER Popsiam Knight
+ADDEVENT Coding
+REGISTER Camp Phone
+ADDEVENT ICT
+REGISTER Popsiam Wan
+ADDEVENT Camp
+ADDEVENT IOT
+UNDO
+REGISTER Metro Phone
+REGISTER Coding Euro
+REGISTER Popsiam Euro
+SHOW IOT
+CANCEL Metro Prame
+ADDEVENT Popsiam
+ADDEVENT Metro
+REGISTER Boardgame A
+SHOW Phonesiam
+UNDO
+ADDEVENT Popsiam
+CANCEL ICT Wan
+ADDEVENT Camp
+CANCEL Metro Wan
+REGISTER Boardgame Knight
+CANCEL Boardgame A
+CANCEL Popsiam Nut
+REGISTER Phonesiam Euro
+CANCEL Coding A
+REGISTER Popsiam Wan
+UNDO
+CANCEL Metro Knight
+UNDO
+SHOW ICT
+ADDEVENT Boardgame
+ADDEVENT Metro
+UNDO
+REGISTER Popsiam Nut
+SHOW IOT
+REGISTER Boardgame Euro
+REGISTER Popsiam Prame
+REGISTER Popsiam B
+SHOW Coding
+SHOW Camp
+SHOW Coding
+ADDEVENT Boardgame
+UNDO
+CANCEL Boardgame Euro
+ADDEVENT Camp
+CANCEL Metro Nut
+UNDO
+REGISTER IOT B
+CANCEL Boardgame Knight
+SHOW Boardgame
+REGISTER Phonesiam A
+REGISTER Boardgame Knight
+ADDEVENT Phonesiam
+ADDEVENT IOT
+UNDO
+CANCEL IOT Wan
+ADDEVENT IOT
+SHOW ICT
+UNDO
+SHOW Coding
+ADDEVENT Camp
+SHOW Metro
+REGISTER Metro A
+SHOW Boardgame
+ADDEVENT Camp
+SHOW Coding
+CANCEL Phonesiam Phone
+ADDEVENT Boardgame
+CANCEL Camp Knight
+ADDEVENT Coding
+CANCEL IOT A
+CANCEL Metro Phone
+CANCEL Coding B
+UNDO
+SHOW Camp
+CANCEL Metro Nut
+SHOW ICT
+ADDEVENT Metro
+REGISTER IOT Euro
+REGISTER Camp Knight
+CANCEL Popsiam Wan
+REGISTER ICT Nut
+CANCEL Metro Euro
+CANCEL Popsiam B
+SHOW Popsiam
+ADDEVENT Boardgame
+ADDEVENT ICT
+CANCEL Metro Wan
+ADDEVENT Popsiam
+REGISTER Coding Nut
+SHOW Phonesiam
+UNDO
+SHOW Popsiam
+CANCEL Phonesiam Wan
+UNDO
+UNDO
+CANCEL Boardgame Knight
+SHOW Metro
+REGISTER Coding Phone
+CANCEL Popsiam Prame
+ADDEVENT Boardgame
+CANCEL IOT Euro
+CANCEL Coding Wan
+ADDEVENT Coding
+UNDO
+CANCEL IOT Wan
+UNDO
+CANCEL Metro Euro
+ADDEVENT Metro
+UNDO
+SHOW IOT
+ADDEVENT Camp
+UNDO
+REGISTER IOT Euro
+CANCEL Phonesiam Nut
+UNDO
+CANCEL Coding Euro
+REGISTER Phonesiam A
+SHOW Metro
+REGISTER Camp Euro
+CANCEL Boardgame Prame
+CANCEL Phonesiam Prame
+ADDEVENT Phonesiam
+REGISTER ICT Prame
+ADDEVENT Coding
+REGISTER Metro Knight
+UNDO
+ADDEVENT Phonesiam
+CANCEL Camp Nut
+ADDEVENT Phonesiam
+ADDEVENT Boardgame
+ADDEVENT ICT
+UNDO
+CANCEL Boardgame Prame
+ADDEVENT Metro
+REGISTER ICT Nut
+SHOW Camp
+SHOW ICT
+SHOW ICT
+ADDEVENT Boardgame
+ADDEVENT ICT
+ADDEVENT IOT
+CANCEL Camp Prame
+SHOW Popsiam
+SHOW Popsiam
+ADDEVENT Coding
+REGISTER Camp Prame
+SHOW Phonesiam
+REGISTER ICT Wan
+ADDEVENT Metro
+UNDO
+REGISTER Phonesiam Knight
+SHOW ICT
+REGISTER Camp Wan
+UNDO
+ADDEVENT ICT
+ADDEVENT Boardgame
+REGISTER ICT B
+CANCEL Popsiam Nut
+CANCEL Popsiam Wan
+ADDEVENT Camp
+UNDO
+ADDEVENT Coding
+SHOW Camp
+REGISTER ICT Prame
+REGISTER Popsiam Nut
+ADDEVENT Phonesiam
+REGISTER Phonesiam Nut
+CANCEL Camp Nut
+UNDO
+CANCEL Boardgame Wan
+SHOW Popsiam
+UNDO
+REGISTER Coding Phone
+CANCEL Metro Knight
+ADDEVENT Camp
+REGISTER IOT Prame
+UNDO
+SHOW Metro
+REGISTER IOT A
+ADDEVENT Camp
+ADDEVENT Popsiam
+SHOW Camp
+CANCEL Coding B
+REGISTER Phonesiam Nut
+ADDEVENT Camp
+ADDEVENT ICT
+ADDEVENT Phonesiam
+ADDEVENT Phonesiam
+CANCEL Popsiam Nut
+SHOW Coding
+SHOW IOT
+UNDO
+CANCEL Coding Phone
+CANCEL Boardgame Euro
+UNDO
+ADDEVENT IOT
+REGISTER IOT Prame
+REGISTER Metro Nut
+UNDO
+REGISTER Metro B
+SHOW IOT
+UNDO
+CANCEL IOT Euro
+CANCEL Metro Wan
+UNDO
+REGISTER Popsiam Phone
+CANCEL Popsiam Prame
+REGISTER Coding A
+CANCEL Phonesiam Prame
+REGISTER ICT Wan
+UNDO
+ADDEVENT Camp
+SHOW Boardgame
+CANCEL Boardgame Knight
+SHOW Coding
+UNDO
+SHOW Boardgame
+UNDO
+REGISTER Popsiam Wan
+SHOW IOT
+ADDEVENT ICT
+UNDO
+CANCEL Phonesiam Wan
+SHOW IOT
+SHOW Phonesiam
+CANCEL Popsiam B
+REGISTER Phonesiam Phone
+ADDEVENT Boardgame
+SHOW Popsiam
+ADDEVENT Popsiam
+SHOW Coding
+CANCEL Phonesiam Phone
+REGISTER Camp Euro
+CANCEL Phonesiam B
+ADDEVENT Boardgame
+UNDO
+ADDEVENT Phonesiam
+ADDEVENT Camp
+UNDO
+UNDO
+ADDEVENT Phonesiam
+CANCEL ICT Euro
+REGISTER Coding B
+SHOW ICT
+CANCEL Camp Nut
+REGISTER Metro B
+UNDO
+ADDEVENT Phonesiam
+REGISTER Camp Knight
+UNDO
+CANCEL Coding Nut
+SHOW Metro
+SHOW Camp
+UNDO
+CANCEL Metro Prame
+SHOW Phonesiam
+ADDEVENT ICT
+ADDEVENT Metro
+REGISTER Camp Wan
+CANCEL IOT Euro
+SHOW Boardgame
+UNDO
+SHOW Camp
+ADDEVENT Phonesiam
+UNDO
+SHOW Metro
+REGISTER IOT Prame
+CANCEL Metro Euro
+ADDEVENT Phonesiam
+SHOW Coding
+ADDEVENT Boardgame
+CANCEL Camp Euro
+UNDO
+UNDO
+SHOW Camp
+UNDO
+CANCEL Boardgame Wan
+CANCEL Phonesiam Nut
+ADDEVENT Coding
+SHOW Boardgame
+CANCEL Coding Nut
+SHOW Popsiam
+REGISTER Popsiam A
+SHOW Metro
+SHOW Metro
+ADDEVENT Phonesiam
+CANCEL Metro Knight
+CANCEL Metro Wan
+CANCEL Metro Phone
+REGISTER Boardgame B
+SHOW Phonesiam
+SHOW Popsiam
+UNDO
+ADDEVENT ICT
+REGISTER Camp B
+SHOW Boardgame
+SHOW ICT
+UNDO
+SHOW Coding
+ADDEVENT Camp
+CANCEL Boardgame Prame
+UNDO
+UNDO
+SHOW ICT
+SHOW Coding
+CANCEL Camp Knight
+CANCEL Metro Wan
+SHOW Popsiam
+ADDEVENT Popsiam
+REGISTER ICT Wan
+ADDEVENT Coding
+ADDEVENT Metro
+ADDEVENT Camp
+UNDO
+ADDEVENT Phonesiam
+ADDEVENT IOT
+CANCEL Camp Nut
+REGISTER ICT B
+REGISTER Phonesiam Nut
+CANCEL Boardgame Euro
+ADDEVENT ICT
+SHOW ICT
+ADDEVENT Camp
+UNDO
+ADDEVENT Coding
+CANCEL Coding Knight
+REGISTER Coding Knight
+UNDO
+REGISTER IOT Wan
+ADDEVENT Metro
+REGISTER IOT Phone
+UNDO
+CANCEL ICT B
+REGISTER Phonesiam Prame
+UNDO
+SHOW Metro
+UNDO
+SHOW Boardgame
+REGISTER Phonesiam A
+CANCEL Boardgame B
+CANCEL Camp B
+SHOW Phonesiam
+UNDO
+UNDO
+ADDEVENT IOT
+CANCEL Phonesiam A
+SHOW ICT
+UNDO
+CANCEL IOT Wan
+CANCEL Camp Nut
+UNDO
+SHOW Coding
+CANCEL Metro Wan
+SHOW Coding
+SHOW Phonesiam
+ADDEVENT IOT
+SHOW Popsiam
+REGISTER Coding Knight
+ADDEVENT IOT
+REGISTER ICT Nut
+UNDO
+SHOW Metro
+UNDO
+CANCEL Phonesiam Phone
+REGISTER Camp B
+REGISTER Popsiam A
+REGISTER Metro Phone
+SHOW Boardgame
+REGISTER ICT Euro
+CANCEL Metro Nut
+SHOW Boardgame
+CANCEL IOT A
+SHOW Phonesiam
+REGISTER Phonesiam Knight
+ADDEVENT Camp
+ADDEVENT Metro
+REGISTER Phonesiam Phone
+CANCEL ICT Knight
+REGISTER ICT B
+ADDEVENT IOT
+SHOW ICT
+REGISTER Boardgame Euro
+ADDEVENT Popsiam
+SHOW IOT
+REGISTER ICT B
+ADDEVENT Camp
+CANCEL Camp Euro
+SHOW Metro
+SHOW Camp
+UNDO
+REGISTER Metro B
+SHOW Popsiam
+SHOW Coding
+SHOW Coding
+ADDEVENT Phonesiam
+CANCEL Popsiam Phone
+CANCEL ICT Euro
+CANCEL Coding Wan
+REGISTER ICT Euro
+UNDO
+UNDO
+ADDEVENT Boardgame
+CANCEL Boardgame Nut
+UNDO
+SHOW Phonesiam
+UNDO
+UNDO
+REGISTER Boardgame Prame
+CANCEL Boardgame Phone
+UNDO
+ADDEVENT IOT
+CANCEL Camp Wan
+CANCEL Boardgame Phone
+UNDO
+ADDEVENT Metro
+ADDEVENT IOT
+REGISTER Phonesiam Euro
+CANCEL Metro Nut
+CANCEL Metro Wan
+REGISTER Coding Euro
+CANCEL ICT Prame
+SHOW Phonesiam
+REGISTER IOT Wan
+ADDEVENT Coding
+SHOW Metro
+SHOW Phonesiam
+ADDEVENT IOT
+ADDEVENT Metro
+UNDO
+SHOW IOT
+SHOW ICT
+REGISTER Camp Euro
+CANCEL ICT A
+UNDO
+ADDEVENT IOT
+SHOW Popsiam
+ADDEVENT Boardgame
+SHOW Phonesiam
+CANCEL IOT Prame
+ADDEVENT Metro
+ADDEVENT ICT
+SHOW Phonesiam
+SHOW Camp
+ADDEVENT Camp
+CANCEL Coding A
+REGISTER IOT B
+ADDEVENT ICT
+CANCEL Popsiam B
+UNDO
+REGISTER Metro Prame
+ADDEVENT Popsiam
+UNDO
+UNDO
+CANCEL Popsiam Euro
+ADDEVENT Popsiam
+REGISTER Camp A
+ADDEVENT Phonesiam
+SHOW Boardgame
+UNDO
+UNDO
+ADDEVENT Phonesiam
+ADDEVENT Popsiam
+CANCEL Boardgame Wan
+SHOW IOT
+REGISTER Boardgame Nut
+CANCEL Metro Wan
+ADDEVENT IOT
+REGISTER Coding Knight
+UNDO
+SHOW Phonesiam
+UNDO
+UNDO
+SHOW Phonesiam
+REGISTER Boardgame Phone
+REGISTER Phonesiam Wan
+UNDO
+UNDO
+SHOW Phonesiam
+REGISTER Phonesiam Knight
+SHOW Phonesiam
+ADDEVENT IOT
+REGISTER Metro Prame
+CANCEL Coding Wan
+CANCEL Popsiam Prame
+UNDO
+SHOW Camp
+ADDEVENT Popsiam
+UNDO
+ADDEVENT Metro
+UNDO
+CANCEL Popsiam Prame
+SHOW IOT
+REGISTER Boardgame Prame
+REGISTER ICT Phone
+CANCEL ICT Euro
+UNDO
+REGISTER Popsiam B
+UNDO
