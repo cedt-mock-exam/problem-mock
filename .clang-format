@@ -1,0 +1,3 @@
+BasedOnStyle: LLVM
+ColumnLimit: 9999
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
