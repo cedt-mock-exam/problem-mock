@@ -34,10 +34,6 @@ void CP::list<T>::implant(CP::list<T> &l2,int pos1,int pos2,int count){
     l1_b->prev=implant_b;
     l2_f->next=l2_b;
     l2_b->prev=l2_f;
-    insert(end(),0);
-    erase(--end());
-    insert(end(),0);
-    erase(--end());
 
     mSize+=count;
     l2.mSize-=count;
