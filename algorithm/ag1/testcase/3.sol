@@ -1,0 +1,7 @@
+6
+BDH
+BHD
+DBH
+DHB
+HBD
+HDB

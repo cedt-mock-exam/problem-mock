@@ -1,0 +1,4 @@
+3
+EHH
+HEH
+HHE
