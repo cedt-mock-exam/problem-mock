@@ -1,3 +1,3 @@
 2
-CH
-HC
+AB
+BA

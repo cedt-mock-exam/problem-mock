@@ -1,87 +1,48 @@
-#include <bits/stdc++.h>
 #include "testlib.h"
+#include <bits/stdc++.h>
 
 using namespace std;
 
-typedef long long ll;
+const string CHARSET = "ABCDEFGHIJKL";
 
-const int MIN_LEN = 2;
-const int MAX_LEN = 8;
-const string CHARSET = "ABCDEFGH";
-
-string generateUnique(int len) {
-    string chars = CHARSET; 
-    if (len > (int)chars.size()) len = (int)chars.size();
-    shuffle(chars.begin(), chars.end());
-    return chars.substr(0, len);
+string gen_unique(int len) {
+  string s = CHARSET.substr(0, min(len, 8));
+  shuffle(s.begin(), s.end());
+  return s;
 }
 
-string generateWithRepeats(int len) {
-    string s = "";
-    for (int i = 0; i < len; i++)
-        s += CHARSET[rnd.next(0, (int)CHARSET.size() - 1)];
+string gen_dupe(int len, int numDistinct) {
+  if (numDistinct == 1) return string(len, rnd.any(CHARSET));
+  numDistinct = min({numDistinct, len, 8});
+  string chars = CHARSET.substr(0, numDistinct);
+  shuffle(chars.begin(), chars.end());
 
-    if (len >= 2 && (int)set<char>(s.begin(), s.end()).size() == len) {
-        s[len - 1] = s[len - 2];
-    } else if (len >= 2 && (int)set<char>(s.begin(), s.end()).size() == 1) {
-    } else if (len >= 2 && (int)set<char>(s.begin(), s.end()).size() == len) {
-         s[len - 1] = s[len - 2];
-    }
-    
-    shuffle(s.begin(), s.end());
-    return s;
+  string result;
+  for (int i = 0; i < numDistinct; i++) {
+    int count = len / numDistinct + (i < len % numDistinct);
+    result += string(count, chars[i]);
+  }
+
+  shuffle(result.begin(), result.end());
+  return result;
 }
 
 int main(int argc, char *argv[]) {
-    registerGen(argc, argv, 1);
+  registerGen(argc, argv, 1);
+  rnd.setSeed(101);
 
-    for (int t = 1; t <= 20; t++) {
-        string tc = "testcase/" + to_string(t) + ".in";
-        freopen(tc.c_str(), "w", stdout);
+  for (int t = 1; t <= 20; t++) {
+    freopen(("testcase/" + to_string(t) + ".in").c_str(), "w", stdout);
 
-        ll temp = rnd.next(123456);
-        for (int i = 1; i < temp; i++) {
-            rnd.next(i);
-            rnd.next(i, i);
-        }
+    string s;
+    if (t <= 5) s = gen_unique(t);
+    else if (t <= 10) s = gen_unique(rnd.next(6, 8));
+    else if (t <= 12) s = gen_dupe(rnd.next(6, 10), 14 - t);
+    else if (t <= 18) s = gen_dupe(rnd.next(11, 13), rnd.next(2, 4));
+    else if (t <= 20) s = gen_dupe(rnd.next(11, 13), 1);
 
-        int len;
-        string s;
-        bool unique_chars;
-
-        if (t >= 1 && t <= 5) {
-            len = max(MIN_LEN, t);
-            unique_chars = true;
-        } else if (t >= 6 && t <= 9) {
-            if (t == 6) len = 6;
-            else if (t == 7) len = 7;
-            else len = 8;
-            unique_chars = true;
-        } else if (t == 10) {
-            len = MAX_LEN;
-            unique_chars = true;
-        } else if (t >= 11 && t <= 15) {
-            len = max(MIN_LEN, t - 10);
-            unique_chars = false;
-        } else if (t >= 16 && t <= 19) {
-            if (t == 16) len = 6;
-            else if (t == 17) len = 7;
-            else len = 8;
-            unique_chars = false;
-        } else {
-            len = MAX_LEN;
-            unique_chars = false;
-        }
-        
-        if (unique_chars) {
-            s = generateUnique(len);
-        } else {
-            s = generateWithRepeats(len);
-        }
-
-        cout << s << endl;
-        
-        fclose(stdout);
-    }
-    return 0;
+    cout << s << endl;
+    fclose(stdout);
+  }
+  return 0;
 }
